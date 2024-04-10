@@ -1,47 +1,47 @@
-import {ChangeEvent, useEffect, useState} from "react";
-import axios from "axios";
-import '../scss/ErrorWirteBoard.scss';
-import {useRecoilState} from "recoil";
-import {selectedPlatformState} from "../../../recoil/Atom.tsx";
+    import {ChangeEvent, useEffect, useState} from "react";
+    import axios from "axios";
+    import '../scss/ErrorWirteBoard.scss';
+    import {useRecoilState} from "recoil";
+    import {errorBoard} from "../../../recoil/Atom.tsx";
+    import { ErrorBoard } from "../../../model/ErrorBoard.tsx";
 
-function FirstGroup() {
+    function FirstGroup() {
 
-    const [platformData, setPlatformData] = useState([]);
-    const [selectedPlatformData, setSelectedPlatformData] = useRecoilState(selectedPlatformState)
+        const [platformData, setPlatformData] = useState([]);
 
-    useEffect(() => {
-        axios.post("http://localhost:50000/platformData")
-            .then(response => {
-                setPlatformData(response.data);
-            })
-            .catch(error => {
-                console.error(error);
-            })
-        
-    }, []);
+        const [errorBoardData, setErrorBoardData] = useRecoilState<ErrorBoard>(errorBoard)
 
-    useEffect(() => {
-        console.log(selectedPlatformData);
-    }, [selectedPlatformData]);
+        useEffect(() => {
+            axios.post("http://localhost:50000/platformData")
+                .then(response => {
+                    setPlatformData(response.data);
+                })
+                .catch(error => {
+                    console.error(error);
+                })
+            
+        }, []);
 
-    const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        setSelectedPlatformData(e.target.value);
-    }
+        const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
+            const newSelectedPlatformData: string = e.target.value;
 
-    const FirstGroup = () => {
-        return (
-            <div className="error-write-board-component-first-group">
-                <h2 className="error-write-board-component-where-title">1. 에러가 어디에서 발생했나요? 🤔🤔</h2>
-                <div className="selectBox">
-                    <select name="fruits" className="select" value={selectedPlatformData} onChange={handleSelectChange}>
-                        { platformData.map((value) => <option>{value}</option>) }
-                    </select>
+            setErrorBoardData({ ...errorBoardData, selectedPlatformData: newSelectedPlatformData });
+        }
+
+        const FirstGroup = () => {
+            return (
+                <div className="error-write-board-component-first-group">
+                    <h2 className="error-write-board-component-where-title">1. 에러가 어디에서 발생했나요? 🤔🤔</h2>
+                    <div className="selectBox">
+                        <select name="fruits" className="select" value={errorBoardData.selectedPlatformData} onChange={handleSelectChange}>
+                            { platformData.map((value) => <option>{value}</option>) }
+                        </select>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
+
+        return <FirstGroup />
     }
 
-    return <FirstGroup />
-}
-
-export default FirstGroup
+    export default FirstGroup

@@ -1,24 +1,23 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import '../scss/ErrorWirteBoard.scss';
+import { useRecoilState } from "recoil";
+import { errorBoard } from "../../../recoil/Atom";
+import { ErrorBoard } from "../../../model/ErrorBoard";
 
 function ThirdGroup() {
 
+    const [errorBoardData, setErrorBoardData] = useRecoilState<ErrorBoard>(errorBoard);
+
     const FileUpload = () => {
-
-        const [fileContent, setFileContent] = useState<string>('');
-
-        useEffect(() => {
-            console.log(fileContent);
-
-        }, [fileContent])
 
         const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
             const file = event.target.files?.[0];
             const reader = new FileReader();
 
             reader.onload = () => {
-                const content = reader.result as string;
-                setFileContent(content);
+                const errorFileData = reader.result as string;
+
+                setErrorBoardData({ ...errorBoardData, errorFileData: errorFileData });
             }
 
             reader.readAsText(file!);
@@ -29,7 +28,7 @@ function ThirdGroup() {
                 <h2 className="error-write-board-component-error-title">3. 로그 파일을 올려주세요 (* 내용 출력 *) 😌😌</h2>
                 <form>
                     <input
-                        className="error-write-board-component-error+"
+                        className="error-write-board-component-error"
                         type="file"
                         name="file"
                         onChange={handleFileUpload}

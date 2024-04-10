@@ -1,11 +1,11 @@
 import { atom } from "recoil";
+import { ErrorBoard } from "../model/ErrorBoard";
 
-export const selectedPlatformState = atom ({
-    key: "selectedPlatform",
-    default: ""
-})
-
-export const selectedErrorTypeState = atom ({
-    key: "selectedErrorType",
-    default: ""
-})
+export const errorBoard = atom<ErrorBoard>({
+    key: "errorBoard",
+    default: {
+        selectedPlatformData: "",
+        errorTypeData: "",
+        errorFileData: ""
+    }
+});
