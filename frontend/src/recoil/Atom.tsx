@@ -5,4 +5,7 @@ export const selectedPlatformState = atom ({
     default: ""
 })
 
-export const selected
+export const selectedErrorTypeState = atom ({
+    key: "selectedErrorType",
+    default: ""
+})

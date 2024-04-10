@@ -3,7 +3,6 @@ const https = require('https');
 const cors = require('cors');
 const {errorTypeFromData} = require("./api/errorType/errorTypeFromData");
 const {platformFromData} = require("./api/platform/platformFromData");
-const {DynamoDBSettings} = require("./aws/DynamoDB");
 
 
 const corsOptions = {
@@ -22,10 +21,6 @@ app.post('/errorTypeData', (req, res) => {
     }).on('error', (error) => {
         console.error(error);
     })
-})
-
-app.get('/errorTypeData/get', (req, res) => {
-    DynamoDBSettings()
 })
 
 app.post('/platformData', (req, res) => {
