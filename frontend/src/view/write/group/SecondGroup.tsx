@@ -1,5 +1,6 @@
 import {ChangeEvent, useEffect, useState} from "react";
 import axios from "axios";
+import '../scss/ErrorWirteBoard.scss';
 import {useRecoilState} from "recoil";
 import {selectedErrorTypeState} from "../../../recoil/Atom.tsx";
 
@@ -19,10 +20,14 @@ function SecondGroup() {
         
     }, []);
 
+
+    useEffect(() => {
+        console.log(selectedErrorTypeData);
+    }, [selectedErrorTypeData]);
+
+
     const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
         setSelectedErrorTypeData(e.target.value);
-
-        console.log(selectedErrorTypeData);
     }
 
     const SecondGroup = () => {
@@ -31,7 +36,7 @@ function SecondGroup() {
                 <h2 className="error-write-board-component-kind">2. 에러 종류를 선택해주세요 😏😏</h2>
                 <div className="selectBox">
                     <select name="fruits" className="select" onChange={handleSelectChange}>
-                    { errorTypeData.map((value: string) => <option>{value}</option> )}
+                    { errorTypeData.map((value) => <option>{value}</option> )}
                     </select>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import {ChangeEvent, useEffect, useState} from "react";
 import axios from "axios";
+import '../scss/ErrorWirteBoard.scss';
 import {useRecoilState} from "recoil";
 import {selectedPlatformState} from "../../../recoil/Atom.tsx";
 
@@ -18,6 +19,10 @@ function FirstGroup() {
             })
         
     }, []);
+
+    useEffect(() => {
+        console.log(selectedPlatformData);
+    }, [selectedPlatformData]);
 
     const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
         setSelectedPlatformData(e.target.value);
