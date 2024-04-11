@@ -1,4 +1,3 @@
-import {useEffect} from "react";
 import '../scss/ErrorWirteBoard.scss';
 import { useRecoilState } from "recoil";
 import { errorBoard } from "../../../recoil/Atom";
