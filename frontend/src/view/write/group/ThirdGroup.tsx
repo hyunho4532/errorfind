@@ -25,7 +25,7 @@ function ThirdGroup() {
 
         return (
             <div className="error-write-board-component-third-group">
-                <h2 className="error-write-board-component-error-title">3. 로그 파일을 올려주세요 (* 내용 출력 *) 😌😌</h2>
+                <h2 className="error-write-board-component-error-title">3. 로그 파일을 올려주세요 😌😌</h2>
                 <form>
                     <input
                         className="error-write-board-component-error"
