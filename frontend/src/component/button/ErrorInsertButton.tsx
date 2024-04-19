@@ -1,7 +1,7 @@
 import { useRecoilValue } from 'recoil'
-import '../view/write/scss/component/Button.scss'
-import { ErrorBoard } from '../model/ErrorBoard'
-import { errorBoard } from '../recoil/Atom'
+import '../../view/write/scss/component/Button.scss'
+import { ErrorBoard } from '../../model/ErrorBoard'
+import { errorBoard } from '../../recoil/Atom'
 import uuid from 'react-uuid'
 import axios from 'axios';
 

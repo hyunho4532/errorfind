@@ -12,7 +12,7 @@ export const errorBoard = atom<ErrorBoard>({
     }
 });
 
-export const page = atom<PageList>({
+export const pageCount = atom<PageList>({
     key: "pageCount",
     default: {
         pageCount: 1
