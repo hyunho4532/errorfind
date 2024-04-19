@@ -4,6 +4,7 @@ import SecondGroup from './group/SecondGroup';
 import ThirdGroup from './group/ThirdGroup';
 import ErrorInsertButton from '../../component/ErrorInsertButton';
 import Card from '@mui/material/Card';
+import FourthGroup from './group/FourthGroup';
 
 function errorWriteBoard() {
 
@@ -15,6 +16,8 @@ function errorWriteBoard() {
                 <SecondGroup />
 
                 <ThirdGroup />
+
+                <FourthGroup />
 
                 <ErrorInsertButton />
             </Card>

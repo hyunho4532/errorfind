@@ -9,11 +9,16 @@ function ErrorInsertButton() {
 
     const errorBoardData = useRecoilValue<ErrorBoard>(errorBoard);
 
+    const date = new Date();
+    const formattedDateData = date.toLocaleDateString('ko-KR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
     const data = {
         id: uuid(),
         selectedPlatformData: errorBoardData.selectedPlatformData,
         errorTypeData: errorBoardData.errorTypeData,
-        errorFileData: errorBoardData.errorFileData
+        errorFileData: errorBoardData.errorFileData,
+        errorSituationData: errorBoardData.errorSituationData,
+        formattedDateData: formattedDateData,
     };
 
     const errorInsertButton = () => {

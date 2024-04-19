@@ -6,6 +6,7 @@ export const errorBoard = atom<ErrorBoard>({
     default: {
         selectedPlatformData: "",
         errorTypeData: "",
-        errorFileData: ""
+        errorFileData: "",
+        errorSituationData: ""
     }
 });

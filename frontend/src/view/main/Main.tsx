@@ -1,5 +1,7 @@
 import axios from "axios"
 import { useState } from "react";
+import './scss/Main.scss'
+import { Card } from "@mui/material";
 
 function Main() {
 
@@ -15,12 +17,15 @@ function Main() {
         })
 
     return (
-        <div>
-            {errorBoardData.map((error: any, index) => (
-                <div key={index}>
-                    <p>{error.errorTypeData}</p>
-                </div>
-            ))}
+        <div className="main-component">
+                {errorBoardData.map((error: any, index) => (
+                    <Card className="main-card-component">
+                        <div key={index}>
+                            <p>{error.errorTypeData}</p>
+                            <p className="main-card-formatted">{error.formattedDateData}</p>
+                        </div>
+                    </Card>
+                ))}
         </div>
     )
 }
