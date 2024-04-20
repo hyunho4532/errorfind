@@ -1,5 +1,4 @@
-import {useEffect} from "react";
-import '../scss/ErrorWirteBoard.scss';
+import '../scss/errorWirteBoard.scss';
 import { useRecoilState } from "recoil";
 import { errorBoard } from "../../../recoil/Atom";
 import { ErrorBoard } from "../../../model/ErrorBoard";

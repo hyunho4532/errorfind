@@ -124,3 +124,29 @@
     margin-left: 16px;
   }
 }
+
+.error-write-board-component-fourth-group {
+  margin-top: 120px;
+
+  .error-write-board-component-situation {
+    text-align: start;
+    padding-left: 16px;
+  }
+
+  .error-write-board-component-error {
+    display: flex;
+    margin-left: 16px;
+  }
+}
+
+.inputBox {
+  display: flex;
+  margin-left: 16px;
+
+  .input-situation {
+    width: 500px;
+    height: 30px;
+
+    padding-left: 8px;
+  }
+}

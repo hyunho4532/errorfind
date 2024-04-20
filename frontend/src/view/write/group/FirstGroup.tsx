@@ -1,6 +1,6 @@
     import {ChangeEvent, useEffect, useState} from "react";
     import axios from "axios";
-    import '../scss/ErrorWirteBoard.scss';
+    import '../scss/errorWirteBoard.scss';
     import {useRecoilState} from "recoil";
     import {errorBoard} from "../../../recoil/Atom.tsx";
     import { ErrorBoard } from "../../../model/ErrorBoard.tsx";
