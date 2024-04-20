@@ -2,25 +2,27 @@
     position: fixed;
     top: 0;
     width: 55%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
     padding: 10px 20px;
     margin-left: 28px;
     z-index: 1000;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
 
-    .header-login {
-        font-weight: bold;
-        cursor: pointer;
-        text-align: end;
-        margin-right: 80px;
+    .header-logo {
+        justify-content: start;
+        align-items: center;
+        margin-right: auto;
     }
-    
-    .header-error-write {
-        font-weight: bold;
-        cursor: pointer;
-        text-align: end;
-        margin-right: 40px;
+
+
+    .header-main-title {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .header-login {
+            margin-right: 36px;
+        }
     }
 }
