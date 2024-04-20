@@ -65,6 +65,29 @@ app.post('/errorBoardData', (req, res) => {
     });
 })
 
+app.get('/errorBoardData/get/web', (req, res) => {
+
+    aws.config.update ({
+        region: 'ap-northeast-2',
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    })
+
+    const params = {
+        TableName: 'errorBoard',
+    };
+
+    docClient.scan(params, (err, data) => {
+        if (err) {
+            res.status(500).send('Error saving data to DynamoDB');
+        } else {
+            res.json(data.Items);
+            console.log(res.json(data.Items));
+        }
+    });
+
+});
+
 app.get('/errorBoardData/get', (req, res) => {
     
     aws.config.update ({

@@ -1,3 +1,5 @@
+import './ErrorBoardWebType.scss'
+
 function ErrorBoardWebType() {
     return (
         <>

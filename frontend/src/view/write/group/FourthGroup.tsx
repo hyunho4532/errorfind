@@ -1,4 +1,4 @@
-import '../scss/ErrorWirteBoard.scss';
+import '../scss/errorWirteBoard.scss';
 import { useRecoilState } from 'recoil';
 import { ErrorBoard } from '../../../model/ErrorBoard';
 import { errorBoard } from '../../../recoil/Atom';
