@@ -66,7 +66,7 @@ app.post('/errorBoardData', (req, res) => {
 })
 
 app.get('/errorBoardData/get/web', (req, res) => {
-
+    
     aws.config.update ({
         region: 'ap-northeast-2',
         accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -81,12 +81,12 @@ app.get('/errorBoardData/get/web', (req, res) => {
         if (err) {
             res.status(500).send('Error saving data to DynamoDB');
         } else {
-            res.json(data.Items);
-            console.log(res.json(data.Items));
+            const filteringWebTypeData = data.Items.filter(item => item.selectedPlatformData === '웹');
+            res.json(filteringWebTypeData);
         }
     });
-
 });
+
 
 app.get('/errorBoardData/get', (req, res) => {
     
