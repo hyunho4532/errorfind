@@ -1,0 +1,21 @@
+.main-component-title {
+    text-align: left;
+    margin-left: 30px;
+}
+
+.main-component {
+    width: 1080px;
+    height: 180px;
+
+    .main-component-card {
+        margin-left: 30px;
+    
+        .main-card-component {
+            margin-left: 16px;
+            
+            .main-component-card-typedata {
+                text-align: left;
+            }
+        }
+    }
+}

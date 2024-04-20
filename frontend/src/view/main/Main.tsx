@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import './scss/Main.scss'
-import ErrorBoard from "../../component/ErrorBoard";
-import CustomPagination from "../../component/CustomPagination";
+import ErrorBoard from "../../component/board/ErrorBoard";
+import CustomPagination from "../../component/pagination/CustomPagination";
+import ErrorBoardWebType from "../../component/board/web/ErrorBoardWebType";
 
 function Main() {
     const [errorBoardData, setErrorBoardData] = useState([]);
@@ -23,6 +24,8 @@ function Main() {
             <ErrorBoard errorBoardData={errorBoardData} page={page} />
         
             <CustomPagination errorBoardData={errorBoardData} page={page} setPage={setPage} />
+
+            <ErrorBoardWebType />
         </>
     )
 }

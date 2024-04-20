@@ -1,4 +1,5 @@
 import { Pagination } from "@mui/material";
+import './Pagination.scss'
 
 function CustomPagination(props: any) {
 
@@ -12,6 +13,7 @@ function CustomPagination(props: any) {
 
     return (
         <Pagination
+            className="custom-pagination"
             count={totalPages}
             page={props.page}
             onChange={handlePageChange}
